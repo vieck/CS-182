@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Main {
 
-    VariableBinaryTree variableBinaryTree;
     Boolean[] variables;
     int[][] clauseArray;
 
@@ -34,6 +33,7 @@ public class Main {
     }
 
     private boolean[] findSatisfiability(int cnt, int varcnt, boolean[] array) {
+        //Set the first variable to true and the progress up to cnt
         array[cnt - 1] = true;
         if (cnt != varcnt) {
             array = findSatisfiability(cnt + 1, varcnt, array);
@@ -86,9 +86,9 @@ public class Main {
         return output;
     }
 
-    private static void print(int testNum, int variables, int clauses, boolean[] booleans) {
+    private void print(int testNum, int variables, int clauses, boolean[] booleans) {
         System.out.printf("Test %d: %d Variable(s) %d Clause(s)\n", testNum, variables, clauses);
-        if (booleans == null) {
+        if (!checkClauses(booleans)) {
             System.out.print("Unsatisfiable\n");
         } else {
             System.out.print("Satisfiable\n");
@@ -97,17 +97,6 @@ public class Main {
                 builder.append(bool + " ");
             }
             System.out.println(builder.toString());
-        }
-    }
-
-    public void printArray(List<ArrayList<Boolean>> list) {
-        System.out.println("Size " + variableBinaryTree.size);
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print("Row=" + (i + 1) + " " + "Columns=" + (list.get(i).size()));
-            for (int j = 0; j < list.get(i).size(); j++) {
-                System.out.print(" " + list.get(i).get(j));
-            }
-            System.out.println();
         }
     }
 }
