@@ -1,0 +1,11 @@
+Test 1: 3 Variable(s) 3 Clause(s)
+Satisfiable
+false false true 
+Test 2: 1 Variable(s) 2 Clause(s)
+Unsatisfiable
+Test 3: 5 Variable(s) 8 Clause(s)
+Satisfiable
+true true true false true false false false 
+Test 4: 3 Variable(s) 5 Clause(s)
+Satisfiable
+true false false false false 
